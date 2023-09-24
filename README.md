@@ -8,4 +8,4 @@ Tasks:
     Design the tables and define their attributes.
     Establish the relationships between the tables.
 
-    ![ASSS-SCHEMA.drawio.svg](..%2FPU-ASSS%2Fdrawio%2FASSS-SCHEMA.drawio.svg)
+    ![ASSS-SCHEMA.drawio.svg](drawio%2FASSS-SCHEMA.drawio.svg)
