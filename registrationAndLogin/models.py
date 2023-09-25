@@ -24,6 +24,10 @@ class University(models.Model):
     slots_filled = models.IntegerField(default=0)
     cutoff_score = models.IntegerField()
 
+    def __str__(self):
+        return (f"name: {self.get_name()} | grade: {self.get_grade()} | slots available: {self.get_capacity()} "
+                f"| slots filled: {self.get_slots_filled()} | cutoff score: {self.cutoff_score}")
+
     def get_name(self):
         return self.name
 
