@@ -36,19 +36,19 @@ class University:
     def get_slots_filled(self):
         return self.slots_filled
 
-    def add_student(self, student):
-        self.students.append(student)
+    def add_student(self, stud):
+        self.students.append(stud)
         self.slots_filled += 1
 
-    def remove_student(self, student):
-        self.students.remove(student)
+    def remove_student(self, stud):
+        self.students.remove(stud)
         self.slots_filled -= 1
 
     def is_slot_available(self):
         return self.slots_filled < self.capacity
 
-    def is_eligible(self, student):
-        return student.get_grade() >= self.cutoff_score
+    def is_eligible(self, stud):
+        return stud.get_grade() >= self.cutoff_score
 
 
 class Student:
