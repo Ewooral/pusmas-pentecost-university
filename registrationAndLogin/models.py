@@ -9,6 +9,7 @@ class SchoolSystem(models.Model):
 
     def remove_university(self, university):
         self.universities.remove(university)
+        
 
     def allocate_slot(self, student):
         for uni in self.universities.all():
@@ -23,10 +24,11 @@ class University(models.Model):
     capacity = models.IntegerField()
     slots_filled = models.IntegerField(default=0)
     cutoff_score = models.IntegerField()
+    programs = models.CharField(max_length=200)
 
     def __str__(self):
         return (f"name: {self.get_name()} | grade: {self.get_grade()} | slots available: {self.get_capacity()} "
-                f"| slots filled: {self.get_slots_filled()} | cutoff score: {self.cutoff_score}")
+                f"| slots filled: {self.get_slots_filled()} | cutoff score: {self.cutoff_score}") 
 
     def get_name(self):
         return self.name
