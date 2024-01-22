@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+package pusmas;
+
+// The user service definition.
+service Userservice {
+    rpc RegisterUser(RegisterUserRequest) returns (UserResponse) {}
+    rpc LoginUser(LoginUserRequest) returns (UserResponse) {}
+    rpc ForgotPassword(ForgotPasswordRequest) returns (ForgotPasswordResponse){}
+    rpc VerifyOTP(VerifyOTPRequest) returns (VerifyOTPResponse){}
+    rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse){}
+}
+
+// The request message containing the user's registration details.
+message RegisterUserRequest{
+    string firstname = 1;
+    string lastname = 2;
+    string email = 3;
+    string password = 4;
+    string title = 5;
+}
+
+// The request message containing the usr's login details
+message LoginUserRequest{
+    string email = 1;
+    string password = 2;
+}
+
+// The request message for forgot password
+message ForgotPasswordRequest{
+    string email = 1;
+}
+
+// The response message for forgot password
+message ForgotPasswordResponse{
+    string message = 1;
+}
+
+// The request message for verify OTP
+message VerifyOTPRequest{
+    string email = 1;
+    string otp = 2;
+}
+
+// The response message for verify OTP
+message VerifyOTPResponse{
+    string message = 1;
+}
+
+// The request message for reset password
+message ResetPasswordRequest{
+    string email = 1;
+    string otp = 2;
+    string newPassword = 3;
+}
+
+// The response message for reset password
+message ResetPasswordResponse{
+    string message = 1;
+}
+
+// The response message containing the user's details
+message UserResponse{
+    string id = 1;
+    string firstname = 2;
+    string lastname = 3;
+    string email = 4;
+    string title = 5;
+    string token = 6;
+    bool isSuccess = 7;
+    string message = 8;
+}
